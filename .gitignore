@@ -1,0 +1,8 @@
+# Node modules
+node_modules/
+
+# Archivos del SO
+.thumbs
+
+# CSS
+style.css
