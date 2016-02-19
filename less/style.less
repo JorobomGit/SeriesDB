@@ -1,45 +1,6 @@
-@main-text-color: blue;
-
-body {
-	color: @main-text-color;
-}
-
-@import url(https://fonts.googleapis.com/css?family=Raleway:700|Roboto+Slab:300,400);
-
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Raleway', sans-serif;	
-}
-
-body{
-	font-family: 'Roboto Slab', serif;
-}
-
-.media.link{
-	transition: background 500ms, box-shadow 250ms;
-	background: #F0F8FF;
-	box-shadow: 0 5px 10px #bbbbbb;
-	display: block;
-	margin: 50px;
-	padding: 50px;
-}
-
-/*Display ninguna imagen*/
-.media.link img{
-	display: none;
-}
-
-/*Al pulsar(hover) aparece la imagen*/
-.media.link:hover img{
-	display: block;
-}
-
-/*Hover evento para poner el raton encima*/
-.media.link:hover{
-	background: #72A0C1;
-}
-
-/*Al hacer click*/
-.media.link:active{
-	box-shadow: 0 0 0 #ffffff, inset 0 5px 10px #00308F;
-}
+@import "fonts.less";
+@import "variables.less";
+@import "html-tags.less";
+@import "utils.less";
+@import "header.less";
+@import "layout.less";

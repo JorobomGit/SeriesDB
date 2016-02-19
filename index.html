@@ -9,27 +9,37 @@
 
 <body>
     <header class="web header">
-        <div class="brand">Series DB</div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#" title="Sistema de recomendación de series y películas a tu gusto">Descubrir</a>
-                </li>
-                <li>
-                    <a href="#" title="Catálogo de películas">Películas</a>
-                </li>
-                <li>
-                    <a href="#" title="Catálogo de series">Series</a>
-                </li>
-                <li>
-                    <a href="#" title="Listado de actores y actrices de series y películas">Actores y actrices</a>
-                </li>
-            </ul>
-        </nav>
-        <form class="search form">
-            <input type="search" id="search" name="q" placeholder="Buscar...">
-            <button type="search">Buscar</button>
-        </form>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="brand">Series DB</div>
+                </div>
+                <div class="col-6">
+                    <nav class="main menu">
+                        <ul>
+                            <li>
+                                <a href="#" title="Sistema de recomendación de series y películas a tu gusto">Descubrir</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Catálogo de películas">Películas</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Catálogo de series">Series</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Listado de actores y actrices de series y películas">Actores y actrices</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-3">
+                    <form class="search form">
+                        <input type="search" id="search" name="q" placeholder="Buscar...">
+                        <button type="search">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </header>
     <main class="web main">
         <section class="series media list">
@@ -57,21 +67,21 @@
             </article>
             <article class="series media item">
                 <a href="#" class="series media link" />
-                    <header class="series media header">
-                        <h3 class="series media title">Juego de Tronos</h3>
-                        <img src="https://image.tmdb.org/t/p/w185/36tqIH6BPUg7KufHNJEwyeVIpO.jpg" alt="Tyrion con Drogo" title="Carátula de Juego de Tronos">
-                    </header>
-                    <div class="meta">
-                        <div class="categories">
-                            <ul>
-                                <li>Fantasía</li>
-                                <li>Misterio</li>
-                            </ul>
-                        </div>
-                        <time class="release date">2011</time>
-                        <div class="rating">8.5</div>
+                <header class="series media header">
+                    <h3 class="series media title">Juego de Tronos</h3>
+                    <img src="https://image.tmdb.org/t/p/w185/36tqIH6BPUg7KufHNJEwyeVIpO.jpg" alt="Tyrion con Drogo" title="Carátula de Juego de Tronos">
+                </header>
+                <div class="meta">
+                    <div class="categories">
+                        <ul>
+                            <li>Fantasía</li>
+                            <li>Misterio</li>
+                        </ul>
                     </div>
-                    <p class="overview">Juego de Tronos es una serie de televisión de drama y fantasía creada para la HBO por David Benioff y D. B. Weiss. Es una adaptación de la saga de novelas de fantas…</p>
+                    <time class="release date">2011</time>
+                    <div class="rating">8.5</div>
+                </div>
+                <p class="overview">Juego de Tronos es una serie de televisión de drama y fantasía creada para la HBO por David Benioff y D. B. Weiss. Es una adaptación de la saga de novelas de fantas…</p>
                 </a>
             </article>
             <article class="series media item">
