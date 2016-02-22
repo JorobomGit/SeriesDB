@@ -1,15 +1,11 @@
 .media.item {
-    height: 228px;
-    overflow: hidden;
     margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #ccc;
     .cover {
         overflow: hidden;
-    }
-    &:hover {
-        img {
-            //Buscamos que el contenedor no crezca
-            transform: scale(1.3);
-        }
     }
     img {
     	transition: transform 250ms;
@@ -39,5 +35,15 @@
     .rating {
         display: inline;
         margin-left: 20px;
+    }
+    .video-wrapper{
+        perspective: 200px;
+    }
+    .video  {
+        animation: bounceInDown 2.5s;
+        width: 100%;
+        height: 451px;
+        background: black;
+        //transform: rotateY(-15deg);
     }
 }

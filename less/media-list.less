@@ -1,0 +1,15 @@
+.media.list {
+    .media.item {
+        height: 228px;
+        overflow: hidden;
+        .if-is-mobile({
+            height:auto;
+            });
+        &:hover {
+            img {
+                //Buscamos que el contenedor no crezca
+                transform: scale(1.3);
+            }
+        }
+    }
+}

@@ -2,6 +2,10 @@
 .container {
 	width: @desktop-width;
 	margin: auto;
+	//funcion para responsive
+	.if-is-mobile({
+		width: 100%;
+	});
 }
 
 // Grid
@@ -11,6 +15,9 @@
 		width: @i* (100%/ @columns);
 		float: left;
 		display: block;
+		.if-is-mobile({
+			width:100%
+			});
 	}
 	.grid-generator(@columns, (@i + 1));
 }
