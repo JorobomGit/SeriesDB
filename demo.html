@@ -8,24 +8,15 @@
 
 <body>
     <div id="demo">Hello world</div>
-    <button id="updateDateButton">Update date</button>
-    <button id="addListenerButton">Add date</button>
-    <button id="removeListenerButton">Remove date</button>
+    <button id="saveButton">Save</button>
     <script>
-    function updateDate() {
-    	debugger;
-    	console.log("updateDate", arguments);
-        document.getElementById('demo').innerHTML = new Date();
-    }
 
-    document.getElementById('addListenerButton').addEventListener('click', function() {
-    	console.log("addListenerButton", arguments);
-        document.getElementById('updateDateButton').addEventListener('click', updateDate);
-    });
-    document.getElementById('removeListenerButton').addEventListener('click', function() {
-    	console.log("removeListenerButton", arguments);
-        document.getElementById('updateDateButton').removeEventListener('click', updateDate);
-    });
+    document.getElementById('demo').contentEditable = true; //Permite escribir al usuario
+
+    document.getElementById('saveButton').addEventListener('click', function(evt){
+    	console.log("Contenido", document.getElementById('demo').innerHTML);
+    })
+
     
     </script>
 </body>
