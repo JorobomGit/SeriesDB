@@ -7,17 +7,29 @@
 </head>
 
 <body>
-    <div id="demo">Hello world</div>
-    <button id="saveButton">Save</button>
+
+	<div id="container" style="background: silver; padding: 20px;">
+		<div id="content" style="background: red; paddding: 20px;">This is the content</div>
+	</div>
+
     <script>
 
-    document.getElementById('demo').contentEditable = true; //Permite escribir al usuario
+    document.getElementById('container').addEventListener('click', function(){
+    	console.log("CONTAINER CLICKED");
+    })
+    
 
-    document.getElementById('saveButton').addEventListener('click', function(evt){
-    	console.log("Contenido", document.getElementById('demo').innerHTML);
+    document.getElementById('content').addEventListener('click', function(){
+    	event.stopPropagation();
+    	console.log("content clicked");
     })
 
-    
+    document.body.addEventListener('click', function(event){
+    	console.log("BODY clicked");
+    })
+
+
+
     </script>
 </body>
 
