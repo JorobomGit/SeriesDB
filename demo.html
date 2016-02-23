@@ -12,11 +12,13 @@
 		<div id="content" style="background: red; paddding: 20px;">This is the content</div>
 	</div>
 
+	<a href="http://www.google.com" target="_blank">Ir a Google</a>
+
     <script>
 
     document.getElementById('container').addEventListener('click', function(){
     	console.log("CONTAINER CLICKED");
-    })
+    }, true)
     
 
     document.getElementById('content').addEventListener('click', function(){
@@ -26,9 +28,12 @@
 
     document.body.addEventListener('click', function(event){
     	console.log("BODY clicked");
-    })
+    }, true)
 
-
+    document.getElementsByTagName("a")[0].addEventListener('click', function(event){
+    	console.log("Google link");
+    	event.preventDefault();
+    });
 
     </script>
 </body>
