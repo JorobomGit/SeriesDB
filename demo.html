@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -11,22 +12,22 @@
     <button id="addListenerButton">Add date</button>
     <button id="removeListenerButton">Remove date</button>
     <script>
-    	function updateDate(){
-    		document.getElementById('demo').innerHTML=new Date();
-    	}
+    function updateDate() {
+    	debugger;
+    	console.log("updateDate", arguments);
+        document.getElementById('demo').innerHTML = new Date();
+    }
 
-    	function addListener(){
-    		document.getElementById('updateDateButton').addEventListener('click', updateDate);
-    	}
-
-    	function removeListener(){
-    		document.getElementById('updateDateButton').removeEventListener('click', updateDate);
-    	}
-    	
-
-    	document.getElementById('addListenerButton').addEventListener('click', addListener);
-    	document.getElementById('removeListenerButton').addEventListener('click', removeListener);
-		//document.getElementById(‘magicButton’).removeEventListener(“click”, doSomething);
+    document.getElementById('addListenerButton').addEventListener('click', function() {
+    	console.log("addListenerButton", arguments);
+        document.getElementById('updateDateButton').addEventListener('click', updateDate);
+    });
+    document.getElementById('removeListenerButton').addEventListener('click', function() {
+    	console.log("removeListenerButton", arguments);
+        document.getElementById('updateDateButton').removeEventListener('click', updateDate);
+    });
+    
     </script>
 </body>
+
 </html>
