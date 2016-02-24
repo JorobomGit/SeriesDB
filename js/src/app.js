@@ -32,6 +32,24 @@ $(document).ready(function() { // Cuando la página se ha cargado por completo
         }
 
 
-        return true; //Si devolvemos true permitimos envio del formulario
+        //Si he llegado aqui he formulario esta validado
+        //Vamos a hacer una peticion POST para guardar un dato
+        $.ajax({
+        	url: "/api/series/",
+        	data: JSON.stringify({
+        		title: title,
+        		url: url,
+        	}),
+        	contentType: 'application/json',
+        	method: 'POST',
+        	success: function(){
+        		alert("Guardado con éxito!");
+        	},
+        	error: function(){
+        		alert("Se ha producido un error");
+        	}
+        });
+
+        return false;
     });
 });
