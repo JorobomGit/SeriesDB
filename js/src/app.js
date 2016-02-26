@@ -86,9 +86,6 @@ $(document).ready(function() { // Cuando la página se ha cargado por completo
 
     $("#reloadSeriesButton").on("click", reloadSeries);
 
-    reloadSeries();
-
-
     $("#seriesList").on("click", "button", function() {
         console.log("Elimino la serie");
         var self = this;
@@ -108,5 +105,5 @@ $(document).ready(function() { // Cuando la página se ha cargado por completo
 
     });
 
-    //    reloadSeries();
+        reloadSeries();
 });
