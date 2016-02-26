@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Geolocalizacion</title>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+    </script>
+</head>
+
+<body>
+    <button id="requestButton">Detectar posicion</button>
+    <button id="stopButton">Parar posicion</button>
+    <div id="data"></div>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+    var operationID;
+
+    $("#requestButton").click(function() {
+        //Solicita posicion actual de manera asincrona
+        operationID = navigator.geolocation.watchPosition(
+            function(data) { //ha ido bien
+                console.log("Geolocalización conseguida", data);
+                var html = "<ul>";
+
+                html += "<li><strong>Latitud: </strong>" + data.coords.latitude + "</li>";
+                html += "<li><strong>Longitud: </strong>" + data.coords.longitude + "</li>";
+                html += "<li><strong>Precision: </strong>" + data.coords.accuracy + "</li>";
+
+                html += "</ul>";
+                $("#data").html(html);
+
+
+                //GOOGLE MAPS
+                var mapProp = {
+                    center: new google.maps.LatLng(data.coords.latitude, data.coords.longitude),
+                    zoom: 18,
+                    mapTypeId: google.maps.MapTypeId.SATELLITE
+                };
+                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                google.maps.event.addDomListener(window, 'load', this);
+            },
+            function(error) { //ha ido mal
+                console.log("Geolocalización fallida", error);
+            }, { //opciones de cofiguracion
+                enableHighAccuracy: true,
+                maximumAge: 0
+            }
+        );
+    });
+
+    $("#stopButton").on("click", function() {
+        navigator.geolocation.clearWatch(operationID);
+    });
+    </script>
+    <div id="googleMap" style="width:500px;height:380px;"></div>
+</body>
+
+</html>
